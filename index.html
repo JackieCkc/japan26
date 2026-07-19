@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關西夢幻聯遊 · 大阪 奈良 京都 4天4夜全景名勝、車程與購物備選簡報</title>
+    <title>關西夢幻聯遊 · 大阪 奈良 京都 4天4夜全景名勝、車程、購物與特色體驗全集</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -251,6 +251,12 @@
             gap: 18px;
         }
 
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
         .timeline-list {
             display: flex;
             flex-direction: column;
@@ -485,7 +491,7 @@
 
         .progress-bar {
             height: 100%;
-            width: 5.88%;
+            width: 5.55%;
             background: var(--gradient-primary);
             transition: width 0.4s ease;
         }
@@ -662,7 +668,7 @@
         .pulse-ring { animation: pulse-ring-glow 2.5s infinite ease-in-out; }
 
         @media (max-width: 1024px) {
-            .grid-split, .grid-3 { grid-template-columns: 1fr; gap: 16px; }
+            .grid-split, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 16px; }
             .slide { padding: 24px 20px; }
             .cover-title { font-size: 2.3rem; }
         }
@@ -679,8 +685,8 @@
     <header class="header-bar">
         <div class="brand-title">
             <i class="fa-solid fa-torii-gate" style="color: var(--accent-vermilion);"></i>
-            <span>關西夢幻聯遊 · 行程名勝、交通車程與購物備選全集</span>
-            <span class="brand-badge">17 頁完整全集</span>
+            <span>關西夢幻聯遊 · 行程名勝、交通車程、購物與深度體驗全集</span>
+            <span class="brand-badge">18 頁全景典藏版</span>
         </div>
 
         <div class="header-controls">
@@ -698,18 +704,18 @@
                 <div class="cover-content">
                     <div class="cover-badge-group">
                         <div class="cover-pill"><i class="fa-solid fa-plane-arrival" style="color: var(--accent-purple);"></i> 週三深夜 23:00 抵達大阪</div>
-                        <div class="cover-pill"><i class="fa-solid fa-bag-shopping" style="color: var(--accent-gold);"></i> 增設各城市購物替代方案</div>
+                        <div class="cover-pill"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-matcha);"></i> 增設和服/茶道/溫泉/美酒體驗</div>
                         <div class="cover-pill"><i class="fa-solid fa-map-marked-alt" style="color: var(--accent-vermilion);"></i> 每頁配備專屬導覽地圖</div>
                     </div>
 
                     <h1 class="cover-title">關西三城 千年與現代的交響</h1>
                     <p class="cover-desc">
-                        針對「週三深夜 23:00 抵達大阪」規劃的 4天4夜大滿貫簡報！收錄 16 大名勝景致、專屬向量地圖、精確點對點交通車程，以及**大阪、京都、Outlet 全套備選購物地標**！
+                        針對「週三深夜 23:00 抵達大阪」規劃的 4天4夜大滿貫簡報！除了 16 大觀光名勝與購物，更為您獨家規劃**和服體驗、抹茶茶道、居酒屋橫丁、清酒酒藏、USJ 環球影城與天然溫泉**等四大維度深度體驗！
                     </p>
 
                     <div class="stats-grid">
                         <div class="stat-card">
-                            <div class="stat-number">17 頁</div>
+                            <div class="stat-number">18 頁</div>
                             <div class="stat-label">大滿貫簡報全集</div>
                         </div>
                         <div class="stat-card">
@@ -717,12 +723,12 @@
                             <div class="stat-label">景致名勝全收錄</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">6 大</div>
-                            <div class="stat-label">主題購物備選商圈</div>
+                            <div class="stat-number">8 種</div>
+                            <div class="stat-label">特色文化與娛樂體驗</div>
                         </div>
                         <div class="stat-card">
                             <div class="stat-number">100%</div>
-                            <div class="stat-label">彈性行程替換</div>
+                            <div class="stat-label">多元旅程規劃</div>
                         </div>
                     </div>
                 </div>
@@ -1509,7 +1515,7 @@
                 </div>
             </section>
 
-            <!-- SLIDE 14: SCENERY SPOTLIGHT 7 (Nishiki & Outlets) -->
+            <!-- SLIDE 14: SCENERY SPOTLIGHT 7 -->
             <section class="slide" id="slide-14">
                 <div class="slide-header">
                     <div>
@@ -1544,13 +1550,13 @@
                 </div>
             </section>
 
-            <!-- SLIDE 15: SHOPPING ALTERNATIVES (NEW SLIDE) -->
+            <!-- SLIDE 15: SHOPPING ALTERNATIVES -->
             <section class="slide" id="slide-15">
                 <div class="slide-header">
                     <div>
                         <div class="slide-tag" style="color: var(--accent-gold);"><i class="fa-solid fa-bag-shopping"></i> 購物備選指南</div>
                         <h2 class="slide-title">關西三大主題購物商圈（替代方案）</h2>
-                        <p class="slide-subtitle">随时替換觀光景點，滿足血拼、藥妝、動漫與大牌採購需求</p>
+                        <p class="slide-subtitle">隨時替換觀光景點，滿足血拼、藥妝、動漫與大牌採購需求</p>
                     </div>
                     <div class="day-badge" style="background: linear-gradient(135deg, rgba(245,158,11,0.3), rgba(236,72,153,0.3));">購物備選</div>
                 </div>
@@ -1589,8 +1595,58 @@
                 </div>
             </section>
 
-            <!-- SLIDE 16: Essential Transport & Tips -->
+            <!-- SLIDE 16: EXPERIENTIAL ACTIVITIES (NEW SLIDE) -->
             <section class="slide" id="slide-16">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-matcha);"><i class="fa-solid fa-wand-magic-sparkles"></i> 深度體驗指南</div>
+                        <h2 class="slide-title">除了觀光與購物：關西 4 大特色體驗活動</h2>
+                        <p class="slide-subtitle">沉浸式傳統文化、美食DIY、沉浸式娛樂與日式溫泉大放鬆</p>
+                    </div>
+                    <div class="day-badge" style="background: linear-gradient(135deg, rgba(16,185,129,0.3), rgba(56,189,248,0.3));">特色體驗</div>
+                </div>
+
+                <div class="grid-4">
+                    <div class="card-glass" style="border-color: rgba(244, 114, 182, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-vest" style="color: var(--accent-sakura);"></i> 1. 傳統文化體驗</div>
+                        <p class="card-text" style="font-size: 0.82rem; line-height: 1.5;">
+                            <strong>👘 和服/浴衣換裝漫步</strong>：在清水寺或二三年坂租賃和服拍照。<br>
+                            <strong>🍵 傳統茶道與點茶</strong>：體驗本格抹茶研磨與奉茶禮儀。<br>
+                            <strong>📕 御朱印收集</strong>：購買【朱印帳】在各大神社收集手繪朱印墨寶。
+                        </p>
+                    </div>
+
+                    <div class="card-glass" style="border-color: rgba(245, 158, 11, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-wine-glass" style="color: var(--accent-gold);"></i> 2. 美食與微醺巡禮</div>
+                        <p class="card-text" style="font-size: 0.82rem; line-height: 1.5;">
+                            <strong>🐙 章魚燒 DIY 料理課</strong>：在道頓堀自己動手翻轉鐵板章魚燒。<br>
+                            <strong>🍶 京都伏見酒藏品酒</strong>：參訪老字號清酒廠品嚐大吟釀。<br>
+                            <strong>🍻 法善寺橫丁/先斗町</strong>：夜遊古老巷弄居酒屋享用串燒與 Highball。
+                        </p>
+                    </div>
+
+                    <div class="card-glass" style="border-color: rgba(168, 85, 247, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-vr-cardboard" style="color: var(--accent-purple);"></i> 3. 沉浸娛樂與主題樂園</div>
+                        <p class="card-text" style="font-size: 0.82rem; line-height: 1.5;">
+                            <strong>🍄 大阪 USJ 環球影城</strong>：超級任天堂世界與哈利波特魔法世界！<br>
+                            <strong>✨ teamLab 數位藝術展</strong>：長居植物園夜間沉浸式光影展。<br>
+                            <strong>🚂 嵐山嵯峨野觀光小火車</strong>：沿保津川峽谷穿梭山林奇景。
+                        </p>
+                    </div>
+
+                    <div class="card-glass" style="border-color: rgba(56, 189, 248, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-hot-tub-person" style="color: var(--accent-blue);"></i> 4. 溫泉療癒與錢湯體驗</div>
+                        <p class="card-text" style="font-size: 0.82rem; line-height: 1.5;">
+                            <strong>♨️ 大阪 Spa World 世界大溫泉</strong>：16 種主題世界風呂與岩盤浴。<br>
+                            <strong>♨️ 有馬溫泉金湯/銀湯</strong>：日本三大古湯之一（距大阪45分鐘）。<br>
+                            <strong>♨️ 京都百年古風錢湯</strong>：體驗在地人常去的唐破風建築澡堂。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 17: Essential Transport & Tips -->
+            <section class="slide" id="slide-17">
                 <div class="slide-header">
                     <div>
                         <div class="slide-tag"><i class="fa-solid fa-map-location-dot"></i> 實用指南</div>
@@ -1630,8 +1686,8 @@
                 </div>
             </section>
 
-            <!-- SLIDE 17: Conclusion & Q&A -->
-            <section class="slide" id="slide-17">
+            <!-- SLIDE 18: Conclusion & Q&A -->
+            <section class="slide" id="slide-18">
                 <div class="cover-content">
                     <div style="background: rgba(255, 77, 79, 0.15); border: 1px solid rgba(255,77,79,0.3); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
                         <i class="fa-solid fa-plane" style="font-size: 2.2rem; color: var(--accent-vermilion);"></i>
@@ -1665,7 +1721,7 @@
         </div>
 
         <div class="slide-counter">
-            <span class="current" id="current-slide-num">1</span> / <span id="total-slide-num">17</span>
+            <span class="current" id="current-slide-num">1</span> / <span id="total-slide-num">18</span>
         </div>
 
         <div class="nav-controls">

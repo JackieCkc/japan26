@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關西夢幻聯遊 · 大阪 奈良 京都 4天4夜全景名勝、車程與購物備選簡報</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Shippori+Mincho:wght@600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #090d16;
+            --bg-card: rgba(19, 27, 44, 0.78);
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-vermilion: #ff4d4f; /* 日本朱紅 Torii Orange-Red */
+            --accent-gold: #f59e0b; /* 金閣 Gold */
+            --accent-matcha: #10b981; /* 抹茶綠 */
+            --accent-sakura: #f472b6; /* 櫻花粉 */
+            --accent-blue: #38bdf8; /* 關西藍 */
+            --accent-purple: #a855f7; /* 深夜紫 */
+            --gradient-primary: linear-gradient(135deg, #ff4d4f 0%, #f59e0b 100%);
+            --gradient-kyoto: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            --gradient-dark: linear-gradient(180deg, rgba(9, 13, 22, 0.4) 0%, rgba(9, 13, 22, 0.95) 100%);
+            --shadow-glow: 0 10px 30px -10px rgba(255, 77, 79, 0.3);
+            --font-sans: 'Noto Sans TC', 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-mincho: 'Shippori Mincho', 'Noto Serif TC', serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(255, 77, 79, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+        }
+
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .header-bar {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 40px;
+            background: rgba(9, 13, 22, 0.6);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .brand-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ffffff, var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-badge {
+            background: rgba(255, 77, 79, 0.15);
+            color: var(--accent-vermilion);
+            border: 1px solid rgba(255, 77, 79, 0.3);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .btn-icon {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            color: var(--text-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+        }
+
+        .btn-icon:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .presentation-viewport {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            width: 100%;
+            height: calc(100vh - 125px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 40px;
+        }
+
+        .slides-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1440px;
+            height: 100%;
+            max-height: 820px;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.96) translateY(20px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 32px 40px;
+            backdrop-filter: blur(24px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+        }
+
+        .slide::-webkit-scrollbar { width: 6px; }
+        .slide::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(0);
+        }
+
+        .slide-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 12px;
+        }
+
+        .slide-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-vermilion);
+            margin-bottom: 4px;
+        }
+
+        .slide-title {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.25;
+            background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slide-subtitle {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+            font-weight: 400;
+        }
+
+        .day-badge {
+            background: linear-gradient(135deg, rgba(255, 77, 79, 0.2), rgba(245, 158, 11, 0.2));
+            border: 1px solid rgba(255, 77, 79, 0.4);
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-weight: 800;
+            font-size: 0.95rem;
+            color: #fff;
+        }
+
+        .grid-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            height: calc(100% - 75px);
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .timeline-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 20px;
+            bottom: -12px;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:last-child::before { display: none; }
+
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent-vermilion);
+            box-shadow: 0 0 10px var(--accent-vermilion);
+            border: 3px solid var(--bg-dark);
+        }
+
+        .timeline-time {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .timeline-content h4 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .timeline-content p {
+            font-size: 0.84rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .transit-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            color: var(--accent-blue);
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .map-card {
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            padding: 14px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+            flex: 1;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            z-index: 5;
+        }
+
+        .map-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .map-badge {
+            font-size: 0.72rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background: rgba(255, 77, 79, 0.2);
+            color: var(--accent-vermilion);
+            border: 1px solid rgba(255, 77, 79, 0.4);
+            font-weight: 600;
+        }
+
+        .svg-map-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            position: relative;
+        }
+
+        .svg-map-wrapper svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+        }
+
+        .scenery-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .scenery-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
+
+        .scenery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .scenery-body {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+        }
+
+        .scenery-title {
+            font-size: 1.18rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scenery-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .scenery-tip {
+            background: rgba(255, 255, 255, 0.04);
+            border-left: 3px solid var(--accent-gold);
+            padding: 8px 12px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.8rem;
+            color: var(--accent-gold);
+        }
+
+        .card-glass {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .footer-bar {
+            position: relative;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 40px;
+            background: rgba(9, 13, 22, 0.85);
+            backdrop-filter: blur(16px);
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .progress-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 5.88%;
+            background: var(--gradient-primary);
+            transition: width 0.4s ease;
+        }
+
+        .slide-counter {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .slide-counter span.current {
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-nav {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-glass);
+            color: var(--text-primary);
+            padding: 7px 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-nav:hover:not(:disabled) {
+            background: var(--accent-vermilion);
+            border-color: var(--accent-vermilion);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-nav:disabled { opacity: 0.3; cursor: not-allowed; }
+
+        .cover-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cover-title {
+            font-size: 3.3rem;
+            font-family: var(--font-mincho);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #ff4d4f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cover-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 760px;
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .cover-badge-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .cover-pill {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-glass);
+            padding: 5px 14px;
+            border-radius: 30px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            margin-bottom: 2px;
+        }
+
+        .stat-label { font-size: 0.78rem; color: var(--text-muted); }
+
+        .overview-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            padding: 36px;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .overview-modal.active { opacity: 1; pointer-events: auto; }
+
+        .overview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            overflow-y: auto;
+            padding-bottom: 40px;
+        }
+
+        .overview-thumb {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glass);
+            border-radius: 14px;
+            padding: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            height: 125px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .overview-thumb:hover {
+            border-color: var(--accent-vermilion);
+            transform: scale(1.03);
+        }
+
+        .overview-thumb-num { font-weight: 800; color: var(--accent-gold); font-size: 0.8rem; }
+        .overview-thumb-title { font-weight: 700; font-size: 0.85rem; color: #ffffff; line-height: 1.3; }
+
+        @keyframes pulse-ring-glow {
+            0%, 100% { opacity: 0.3; stroke-width: 1px; }
+            50% { opacity: 0.85; stroke-width: 3px; }
+        }
+
+        .pulse-ring { animation: pulse-ring-glow 2.5s infinite ease-in-out; }
+
+        @media (max-width: 1024px) {
+            .grid-split, .grid-3 { grid-template-columns: 1fr; gap: 16px; }
+            .slide { padding: 24px 20px; }
+            .cover-title { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-bg">
+        <div class="particle" style="width: 200px; height: 200px; top: 10%; left: 5%;"></div>
+        <div class="particle" style="width: 300px; height: 300px; top: 60%; right: 10%; animation-delay: -5s;"></div>
+    </div>
+
+    <!-- Header Navigation Bar -->
+    <header class="header-bar">
+        <div class="brand-title">
+            <i class="fa-solid fa-torii-gate" style="color: var(--accent-vermilion);"></i>
+            <span>關西夢幻聯遊 · 行程名勝、交通車程與購物備選全集</span>
+            <span class="brand-badge">17 頁完整全集</span>
+        </div>
+
+        <div class="header-controls">
+            <button class="btn-icon" id="btn-overview" title="所有簡報頁面概覽 (G)"><i class="fa-solid fa-border-all"></i></button>
+            <button class="btn-icon" id="btn-fullscreen" title="全螢幕演示 (F)"><i class="fa-solid fa-expand"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Presentation Viewport -->
+    <main class="presentation-viewport">
+        <div class="slides-wrapper">
+
+            <!-- SLIDE 1: Cover Page -->
+            <section class="slide active" id="slide-1">
+                <div class="cover-content">
+                    <div class="cover-badge-group">
+                        <div class="cover-pill"><i class="fa-solid fa-plane-arrival" style="color: var(--accent-purple);"></i> 週三深夜 23:00 抵達大阪</div>
+                        <div class="cover-pill"><i class="fa-solid fa-bag-shopping" style="color: var(--accent-gold);"></i> 增設各城市購物替代方案</div>
+                        <div class="cover-pill"><i class="fa-solid fa-map-marked-alt" style="color: var(--accent-vermilion);"></i> 每頁配備專屬導覽地圖</div>
+                    </div>
+
+                    <h1 class="cover-title">關西三城 千年與現代的交響</h1>
+                    <p class="cover-desc">
+                        針對「週三深夜 23:00 抵達大阪」規劃的 4天4夜大滿貫簡報！收錄 16 大名勝景致、專屬向量地圖、精確點對點交通車程，以及**大阪、京都、Outlet 全套備選購物地標**！
+                    </p>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">17 頁</div>
+                            <div class="stat-label">大滿貫簡報全集</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">16 處</div>
+                            <div class="stat-label">景致名勝全收錄</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">6 大</div>
+                            <div class="stat-label">主題購物備選商圈</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">彈性行程替換</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 2: Master Overview -->
+            <section class="slide" id="slide-2">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag"><i class="fa-solid fa-map"></i> 關西總地圖 & 交通車程總覽</div>
+                        <h2 class="slide-title">4天4夜 跨城與市區交通車程全覽</h2>
+                        <p class="slide-subtitle">大阪 ➔ 奈良 ➔ 京都 ➔ 關西機場，交通方式與時間一目了然</p>
+                    </div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="timeline-list">
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: var(--accent-purple); font-size: 0.9rem; margin-bottom: 3px;"><i class="fa-solid fa-moon"></i> D0：關西機場 ➔ 大阪難波</h4>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary);">南海電車【空港急行】直達 <strong>~44 分鐘</strong> (或利木津巴士 ~50 分鐘)。</p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: var(--accent-vermilion); font-size: 0.9rem; margin-bottom: 3px;"><i class="fa-solid fa-city"></i> D1：大阪市區地標巡禮</h4>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary);">大阪地下鐵谷町線/御堂筋線，點對點車程約 <strong>10~20 分鐘</strong>。</p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: var(--accent-gold); font-size: 0.9rem; margin-bottom: 3px;"><i class="fa-solid fa-tree"></i> D2：大阪 ➔ 奈良 ➔ 京都</h4>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary);">近鐵奈良線 <strong>~38 分鐘</strong>；近鐵/JR奈良至京都站 <strong>~40 分鐘</strong>。</p>
+                        </div>
+
+                        <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid var(--border-glass);">
+                            <h4 style="color: var(--accent-matcha); font-size: 0.9rem; margin-bottom: 3px;"><i class="fa-solid fa-torii-gate"></i> D3：京都古都景點移動</h4>
+                            <p style="font-size: 0.82rem; color: var(--text-secondary);">JR奈良線 5分鐘；京阪/嵐電/公車車程約 <strong>15~35 分鐘</strong>。</p>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-title"><i class="fa-solid fa-compass" style="color: var(--accent-gold);"></i> 關西大區域移動地圖</span>
+                            <span class="map-badge">Kansai Regional Map</span>
+                        </div>
+                        <div class="svg-map-wrapper">
+                            <svg viewBox="0 0 500 380" xmlns="http://www.w3.org/2000/svg">
+                                <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+                                </pattern>
+                                <rect width="500" height="380" fill="url(#grid)" />
+
+                                <path d="M 0 220 Q 80 250 120 380 L 0 380 Z" fill="rgba(56, 189, 248, 0.08)" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1.5" />
+                                <text x="30" y="320" fill="rgba(56, 189, 248, 0.4)" font-size="12" font-weight="700">大阪灣 (Osaka Bay)</text>
+
+                                <path d="M 90 340 Q 140 310 200 250" fill="none" stroke="var(--accent-purple)" stroke-width="2.5" stroke-dasharray="6 4" />
+                                <circle cx="210" cy="235" r="28" fill="none" stroke="var(--accent-vermilion)" stroke-width="1.5" stroke-dasharray="3 3" />
+                                <path d="M 200 250 L 370 260 L 300 110" fill="none" stroke="var(--accent-gold)" stroke-width="2.5" stroke-dasharray="6 4" />
+                                <path d="M 300 110 L 320 140 M 300 110 L 230 90" fill="none" stroke="var(--accent-matcha)" stroke-width="2" />
+                                <path d="M 300 110 Q 200 180 90 340" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-dasharray="4 4" />
+
+                                <g transform="translate(90, 340)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-purple)" class="pulse-ring" />
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-purple)" />
+                                    <text x="-35" y="20" fill="#fff" font-size="11" font-weight="700">關西機場 (KIX)</text>
+                                </g>
+
+                                <g transform="translate(200, 250)">
+                                    <circle cx="0" cy="0" r="12" fill="none" stroke="var(--accent-vermilion)" class="pulse-ring" />
+                                    <circle cx="0" cy="0" r="6" fill="var(--accent-vermilion)" />
+                                    <text x="16" y="5" fill="#fff" font-size="12" font-weight="700">大阪 (Osaka)</text>
+                                </g>
+
+                                <g transform="translate(370, 260)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-gold)" class="pulse-ring" />
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-gold)" />
+                                    <text x="14" y="5" fill="#fff" font-size="12" font-weight="700">奈良 (Nara)</text>
+                                </g>
+
+                                <g transform="translate(300, 110)">
+                                    <circle cx="0" cy="0" r="14" fill="none" stroke="var(--accent-matcha)" class="pulse-ring" />
+                                    <circle cx="0" cy="0" r="7" fill="var(--accent-matcha)" />
+                                    <text x="-40" y="-14" fill="#fff" font-size="13" font-weight="800">京都 (Kyoto)</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 3: DAY 0 Map & Transit -->
+            <section class="slide" id="slide-3">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-purple);"><i class="fa-solid fa-moon"></i> DAY 0 · 週三 23:00 深夜交通車程</div>
+                        <h2 class="slide-title">關西機場 ➔ 大阪難波 交通時間表</h2>
+                        <p class="slide-subtitle">23:00 降落後至飯店 Check-in 的精確接駁車程</p>
+                    </div>
+                    <div class="day-badge" style="background: linear-gradient(135deg, rgba(168,85,247,0.3), rgba(255,77,79,0.3));">DAY 0</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-purple);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 23:00 - 23:45</div>
+                                <h4>1. 關西國際機場 (KIX) 清關提取行李</h4>
+                                <p>辦理入境、提取行李（預估耗時 30~45 分鐘）。</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-blue);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 23:55 末班車 (車程 ~44 分鐘)</div>
+                                <h4>2. 南海電車【空港急行】➔ 南海難波站</h4>
+                                <p>沿臨空城、堺站直達難波，票價 930 日圓。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-train"></i> 南海電車空港急行：44 分鐘直達</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-gold);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 00:00~01:00 車次 (車程 ~50 分鐘)</div>
+                                <h4>3. 備選：深夜利木津巴士 ➔ 難波 OCATA</h4>
+                                <p>若過關延誤，由 T1 樓乘巴士直達難波/梅田。</p>
+                                <div class="transit-badge" style="color: var(--accent-gold); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.1);"><i class="fa-solid fa-bus"></i> 深夜巴士：50 分鐘直達</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-title"><i class="fa-solid fa-route" style="color: var(--accent-purple);"></i> D0 深夜交通路線地圖</span>
+                            <span class="map-badge">KIX to Namba Night Route</span>
+                        </div>
+                        <div class="svg-map-wrapper">
+                            <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="500" height="320" fill="url(#grid)" />
+                                <path d="M 0 160 Q 150 200 250 320 L 0 320 Z" fill="rgba(56, 189, 248, 0.06)" stroke="rgba(56, 189, 248, 0.15)" stroke-width="1.5"/>
+                                
+                                <path d="M 100 270 Q 220 220 380 90" fill="none" stroke="var(--accent-purple)" stroke-width="3.5" stroke-dasharray="8 4"/>
+                                <path d="M 100 270 Q 180 160 380 90" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-dasharray="3 3"/>
+
+                                <g transform="translate(100, 270)">
+                                    <circle cx="0" cy="0" r="12" fill="none" stroke="var(--accent-purple)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="6" fill="var(--accent-purple)" />
+                                    <text x="-50" y="24" fill="#fff" font-size="12" font-weight="700">關西國際機場 (KIX)</text>
+                                </g>
+
+                                <g transform="translate(170, 225)">
+                                    <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
+                                    <text x="10" y="4" fill="#94a3b8" font-size="10">臨空城 (Rinku)</text>
+                                </g>
+
+                                <g transform="translate(280, 150)">
+                                    <circle cx="0" cy="0" r="4" fill="#94a3b8"/>
+                                    <text x="10" y="4" fill="#94a3b8" font-size="10">堺 (Sakai)</text>
+                                </g>
+
+                                <g transform="translate(380, 90)">
+                                    <circle cx="0" cy="0" r="14" fill="none" stroke="var(--accent-vermilion)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="7" fill="var(--accent-vermilion)" />
+                                    <text x="18" y="5" fill="#fff" font-size="13" font-weight="800">南海難波站 (飯店入住)</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 4: DAY 1 Osaka Transit -->
+            <section class="slide" id="slide-4">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag"><i class="fa-solid fa-city"></i> DAY 1 · 週四 大阪市區景點間車程</div>
+                        <h2 class="slide-title">大阪地標巡禮與點對點交通時間</h2>
+                        <p class="slide-subtitle">地鐵御堂筋線/谷町線，方便快捷的市內交通指南</p>
+                    </div>
+                    <div class="day-badge">DAY 1</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 09:00 難波 ➔ 大阪城公園</div>
+                                <h4>大阪城天守閣</h4>
+                                <p>地下鐵谷町線（谷町九丁目 ➔ 谷町四丁目）。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-subway"></i> 地鐵谷町線：約 15 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 12:30 大阪城 ➔ 通天閣</div>
+                                <h4>新世界 · 通天閣</h4>
+                                <p>地下鐵堺筋線（堺筋本町 ➔ 惠美須町）。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-subway"></i> 地鐵堺筋線：約 18 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 16:00 通天閣 ➔ 心齋橋</div>
+                                <h4>心齋橋 & 道頓堀</h4>
+                                <p>地下鐵御堂筋線（動物園前 ➔ 難波/心齋橋）。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-subway"></i> 地鐵御堂筋線：約 10 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 19:30 心齋橋 ➔ 梅田</div>
+                                <h4>梅田藍天大廈空中庭園</h4>
+                                <p>御堂筋線（心齋橋 ➔ 梅田）+ 步行 10 分鐘。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-person-walking"></i> 地鐵+步行：約 20 分鐘</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-title"><i class="fa-solid fa-location-dot" style="color: var(--accent-vermilion);"></i> DAY 1 大阪市區打卡地圖</span>
+                            <span class="map-badge">Osaka City Spots</span>
+                        </div>
+                        <div class="svg-map-wrapper">
+                            <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="500" height="320" fill="url(#grid)" />
+
+                                <path d="M 230 40 L 230 280" fill="none" stroke="var(--accent-vermilion)" stroke-width="3" opacity="0.4" stroke-dasharray="4 4" />
+                                <text x="240" y="55" fill="var(--accent-vermilion)" font-size="10" font-weight="700">御堂筋線 (Midosuji Line)</text>
+
+                                <g transform="translate(230, 80)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-blue)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-blue)" />
+                                    <text x="14" y="4" fill="#fff" font-size="12" font-weight="700">4. 梅田藍天大廈 (Umeda)</text>
+                                </g>
+
+                                <g transform="translate(360, 140)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-gold)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-gold)" />
+                                    <text x="14" y="4" fill="#fff" font-size="12" font-weight="700">1. 大阪城天守閣</text>
+                                </g>
+
+                                <g transform="translate(230, 180)">
+                                    <circle cx="0" cy="0" r="14" fill="none" stroke="var(--accent-vermilion)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="7" fill="var(--accent-vermilion)" />
+                                    <text x="-130" y="5" fill="#fff" font-size="12" font-weight="800">3. 心齋橋 & 道頓堀</text>
+                                </g>
+
+                                <g transform="translate(230, 250)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-matcha)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-matcha)" />
+                                    <text x="14" y="4" fill="#fff" font-size="12" font-weight="700">2. 新世界通天閣</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 5: DAY 2 Nara & Kyoto Transit -->
+            <section class="slide" id="slide-5">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag"><i class="fa-solid fa-tree"></i> DAY 2 · 週五 跨城交通車程</div>
+                        <h2 class="slide-title">大阪 ➔ 奈良公園 ➔ 京都祇園 跨城車程</h2>
+                        <p class="slide-subtitle">近鐵奈良線與近鐵/JR京都線的乘車時間指南</p>
+                    </div>
+                    <div class="day-badge">DAY 2</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-gold);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 08:30 大阪難波 ➔ 奈良</div>
+                                <h4>近鐵奈良線快速急行</h4>
+                                <p>大阪難波站直達近鐵奈良站。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-train"></i> 近鐵奈良線：約 38 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-gold);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 10:00 - 14:30 奈良公園內散步</div>
+                                <h4>近鐵奈良站 ➔ 奈良公園 ➔ 東大寺 ➔ 春日大社</h4>
+                                <p>公園內綠蔭步道徒步或乘奈良市內公車。</p>
+                                <div class="transit-badge" style="color: var(--accent-gold); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1);"><i class="fa-solid fa-shoe-prints"></i> 景點間徒步：10~15 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-matcha);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 15:30 奈良 ➔ 京都</div>
+                                <h4>近鐵/JR 奈良 ➔ 京都站</h4>
+                                <p>搭近鐵特急 (35分鐘) 或 JR 奈良線 (45分鐘) 直達京都。</p>
+                                <div class="transit-badge" style="color: var(--accent-matcha); border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.1);"><i class="fa-solid fa-train-subway"></i> 近鐵特急/JR：35~45 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-sakura);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 17:00 京都站 ➔ 祇園</div>
+                                <h4>祇園花見小路 & 八坂神社</h4>
+                                <p>京都市公車 #206 或京阪電車至祇園四條。</p>
+                                <div class="transit-badge" style="color: var(--accent-sakura); border-color: rgba(244,114,182,0.3); background: rgba(244,114,182,0.1);"><i class="fa-solid fa-bus-simple"></i> 市公車/計程車：約 15 分鐘</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-title"><i class="fa-solid fa-route" style="color: var(--accent-gold);"></i> DAY 2 跨城移動地圖</span>
+                            <span class="map-badge">Nara & Kyoto Map</span>
+                        </div>
+                        <div class="svg-map-wrapper">
+                            <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="500" height="320" fill="url(#grid)" />
+
+                                <path d="M 120 220 L 380 220" fill="none" stroke="var(--accent-gold)" stroke-width="3" stroke-dasharray="6 4" />
+                                <text x="210" y="210" fill="var(--accent-gold)" font-size="11" font-weight="700">近鐵奈良線 (38分鐘)</text>
+
+                                <path d="M 380 220 L 300 80" fill="none" stroke="var(--accent-matcha)" stroke-width="3" stroke-dasharray="6 4" />
+                                <text x="350" y="140" fill="var(--accent-matcha)" font-size="11" font-weight="700">近鐵/JR 京都線 (40分鐘)</text>
+
+                                <g transform="translate(120, 220)">
+                                    <circle cx="0" cy="0" r="8" fill="var(--accent-vermilion)"/>
+                                    <text x="-40" y="22" fill="#fff" font-size="11" font-weight="700">大阪難波</text>
+                                </g>
+
+                                <g transform="translate(380, 220)">
+                                    <circle cx="0" cy="0" r="14" fill="none" stroke="var(--accent-gold)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="7" fill="var(--accent-gold)" />
+                                    <text x="18" y="5" fill="#fff" font-size="12" font-weight="800">奈良公園 & 東大寺</text>
+                                </g>
+
+                                <g transform="translate(300, 80)">
+                                    <circle cx="0" cy="0" r="14" fill="none" stroke="var(--accent-matcha)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="7" fill="var(--accent-matcha)" />
+                                    <text x="-120" y="-8" fill="#fff" font-size="12" font-weight="800">京都站 & 祇園八坂神社</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 6: DAY 3 Kyoto Transit -->
+            <section class="slide" id="slide-6">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag"><i class="fa-solid fa-torii-gate"></i> DAY 3 · 週六 京都景點間交通時間</div>
+                        <h2 class="slide-title">京都四大景點間的移動車程</h2>
+                        <p class="slide-subtitle">伏見稻荷 ➔ 清水寺 ➔ 嵐山 ➔ 先斗町 車程詳情</p>
+                    </div>
+                    <div class="day-badge">DAY 3</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-vermilion);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 07:30 京都站 ➔ 伏見稻荷</div>
+                                <h4>JR 奈良線 (京都 ➔ 稻荷)</h4>
+                                <p>搭乘 JR 奈良線普通車，2 站直達伏見稻荷。</p>
+                                <div class="transit-badge" style="color: var(--accent-vermilion); border-color: rgba(255,77,79,0.3); background: rgba(255,77,79,0.1);"><i class="fa-solid fa-train"></i> JR 奈良線：僅 5 分鐘！</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-sakura);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 10:00 伏見稻荷 ➔ 清水寺</div>
+                                <h4>京阪本線 + 步行</h4>
+                                <p>伏見稻荷站 ➔ 祇園四條站 (10分鐘) + 步行至清水寺。</p>
+                                <div class="transit-badge" style="color: var(--accent-sakura); border-color: rgba(244,114,182,0.3); background: rgba(244,114,182,0.1);"><i class="fa-solid fa-train-subway"></i> 電車+步行：約 25 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-matcha);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 14:30 清水寺 ➔ 嵐山</div>
+                                <h4>阪急電車 / 京福嵐電</h4>
+                                <p>河原町 ➔ 桂 ➔ 阪急嵐山站 (或搭乘嵐電)。</p>
+                                <div class="transit-badge" style="color: var(--accent-matcha); border-color: rgba(16,185,129,0.3); background: rgba(16,185,129,0.1);"><i class="fa-solid fa-train"></i> 阪急電車/嵐電：約 40 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-gold);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 18:30 嵐山 ➔ 先斗町</div>
+                                <h4>JR 山陰本線 / 阪急電車</h4>
+                                <p>嵯峨嵐山 ➔ 二條/京都站，直達先斗町美食街。</p>
+                                <div class="transit-badge" style="color: var(--accent-gold); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1);"><i class="fa-solid fa-train-subway"></i> JR/阪急電車：約 25 分鐘</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-title"><i class="fa-solid fa-location-dot" style="color: var(--accent-matcha);"></i> DAY 3 京都景點分佈地圖</span>
+                            <span class="map-badge">Kyoto Master Map</span>
+                        </div>
+                        <div class="svg-map-wrapper">
+                            <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="500" height="320" fill="url(#grid)" />
+
+                                <path d="M 280 20 Q 260 140 310 300" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="4" />
+                                <text x="315" y="270" fill="rgba(56, 189, 248, 0.6)" font-size="11" font-weight="700">鴨川 (Kamo River)</text>
+
+                                <g transform="translate(110, 90)">
+                                    <circle cx="0" cy="0" r="12" fill="none" stroke="var(--accent-matcha)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="6" fill="var(--accent-matcha)" />
+                                    <text x="-95" y="22" fill="#fff" font-size="12" font-weight="700">3. 嵐山竹林小徑</text>
+                                </g>
+
+                                <g transform="translate(320, 240)">
+                                    <circle cx="0" cy="0" r="12" fill="none" stroke="var(--accent-vermilion)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="6" fill="var(--accent-vermilion)" />
+                                    <text x="16" y="5" fill="#fff" font-size="12" font-weight="800">1. 伏見稻荷大社 (千本鳥居)</text>
+                                </g>
+
+                                <g transform="translate(340, 130)">
+                                    <circle cx="0" cy="0" r="12" fill="none" stroke="var(--accent-sakura)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="6" fill="var(--accent-sakura)" />
+                                    <text x="16" y="5" fill="#fff" font-size="12" font-weight="700">2. 清水寺 & 二三年坂</text>
+                                </g>
+
+                                <g transform="translate(260, 120)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-gold)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-gold)" />
+                                    <text x="-90" y="-10" fill="#fff" font-size="11" font-weight="700">4. 先斗町京料理</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 7: DAY 4 Return Transit -->
+            <section class="slide" id="slide-7">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag"><i class="fa-solid fa-bag-shopping"></i> DAY 4 · 週日 市集與返程機場車程</div>
+                        <h2 class="slide-title">錦市場 ➔ 四條河原町 ➔ 關西機場車程</h2>
+                        <p class="slide-subtitle">搭乘 JR Haruka 特急直達關西國際機場 (KIX)</p>
+                    </div>
+                    <div class="day-badge">DAY 4</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-gold);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 09:00 京都站 ➔ 錦市場</div>
+                                <h4>錦市場 & 四條河原町</h4>
+                                <p>地下鐵烏丸線（京都站 ➔ 四條站）+ 步行 3 分鐘。</p>
+                                <div class="transit-badge" style="color: var(--accent-gold); border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.1);"><i class="fa-solid fa-subway"></i> 地鐵烏丸線：約 10 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-blue);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 14:00 河原町 ➔ 京都站</div>
+                                <h4>返京都站取行李準備返程</h4>
+                                <p>搭地鐵或市公車回到京都站月台。</p>
+                                <div class="transit-badge"><i class="fa-solid fa-subway"></i> 地鐵/公車：約 10 分鐘</div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-dot" style="background: var(--accent-purple);"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time"><i class="fa-regular fa-clock"></i> 15:00 京都站 ➔ 關西機場</div>
+                                <h4>JR 關西機場特急 Haruka</h4>
+                                <p>京都站月台直達關西機場 1 樓，車程精確舒適。</p>
+                                <div class="transit-badge" style="color: var(--accent-purple); border-color: rgba(168,85,247,0.3); background: rgba(168,85,247,0.1);"><i class="fa-solid fa-train"></i> JR Haruka 特急：直達 80 分鐘</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-title"><i class="fa-solid fa-plane-departure" style="color: var(--accent-blue);"></i> DAY 4 返程交通軌跡地圖</span>
+                            <span class="map-badge">Departure Express Route</span>
+                        </div>
+                        <div class="svg-map-wrapper">
+                            <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="500" height="320" fill="url(#grid)" />
+
+                                <path d="M 330 70 L 330 110 Q 230 180 110 260" fill="none" stroke="var(--accent-blue)" stroke-width="3.5" stroke-dasharray="8 4" />
+                                <text x="170" y="160" fill="var(--accent-blue)" font-size="11" font-weight="700">JR Haruka 特急 (直達 80分鐘)</text>
+
+                                <g transform="translate(330, 70)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-gold)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-gold)" />
+                                    <text x="14" y="4" fill="#fff" font-size="12" font-weight="700">1. 錦市場 & 四條河原町</text>
+                                </g>
+
+                                <g transform="translate(330, 110)">
+                                    <circle cx="0" cy="0" r="10" fill="none" stroke="var(--accent-blue)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="5" fill="var(--accent-blue)"/>
+                                    <text x="14" y="4" fill="#fff" font-size="11">2. 京都站 (搭 Haruka)</text>
+                                </g>
+
+                                <g transform="translate(110, 260)">
+                                    <circle cx="0" cy="0" r="14" fill="none" stroke="var(--accent-purple)" class="pulse-ring"/>
+                                    <circle cx="0" cy="0" r="7" fill="var(--accent-purple)" />
+                                    <text x="-40" y="24" fill="#fff" font-size="13" font-weight="800">3. 關西國際機場 (KIX)</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 8: SCENERY SPOTLIGHT 1 -->
+            <section class="slide" id="slide-8">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-gold);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 1 · 大阪古今雄風</div>
+                        <h2 class="slide-title">大阪城天守閣 & 梅田藍天大廈空中庭園</h2>
+                        <p class="slide-subtitle">戰國名城與現代摩天露天百萬夜景的完美對比</p>
+                    </div>
+                    <div class="day-badge">大阪特寫</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="scenery-card">
+                        <img src="images/osaka_castle_1784472874885.jpg" alt="大阪城天守閣" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-chess-rook" style="color: var(--accent-gold);"></i> 1. 大阪城天守閣 (Osaka Castle)</h3>
+                                <p class="scenery-desc">
+                                    大阪最著名地標！由豐臣秀吉於 1583 年始建，陡峭巨石護城河搭配金箔雕飾的天守閣，雄偉壯觀。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-lightbulb"></i> 最佳視角：城牆外護城河倒影與西之丸庭園是拍攝天守閣宏偉全景的經典角度。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-list" style="justify-content: center;">
+                        <div class="card-glass" style="border-color: rgba(56, 189, 248, 0.4);">
+                            <h4 class="card-title"><i class="fa-solid fa-building" style="color: var(--accent-blue);"></i> 2. 梅田藍天大廈 (Umeda Sky Building)</h4>
+                            <p class="card-text">
+                                高達 173 公尺的雙塔建築，頂層以環形【空中庭園展望台】相連。穿過透明扶梯，可在 360° 露天平台迎風俯瞰大阪城與淀川璀璨夜景！
+                            </p>
+                            <div style="margin-top: 10px; font-size: 0.8rem; color: var(--accent-blue); font-weight: 600;">
+                                <i class="fa-solid fa-moon"></i> 打卡建議：19:30 登上露天平台，地板會散發星空熒光！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 9: SCENERY SPOTLIGHT 2 -->
+            <section class="slide" id="slide-9">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-vermilion);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 2 · 大阪街頭與霓虹狂歡</div>
+                        <h2 class="slide-title">道頓堀水運河、心齋橋與新世界通天閣</h2>
+                        <p class="slide-subtitle">沉浸在關西不夜城熱情洋溢的美食與霓虹光影中</p>
+                    </div>
+                    <div class="day-badge">大阪特寫</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="scenery-card">
+                        <img src="images/osaka_dotonbori_1784472108549.jpg" alt="道頓堀霓虹" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-city" style="color: var(--accent-vermilion);"></i> 3. 道頓堀 & 心齋橋</h3>
+                                <p class="scenery-desc">
+                                    打卡世界聞名的【格力高霓虹跑者】！沿著水運河走廊走過，兩側全是立體螃蟹、章魚巨型招牌，空氣中瀰漫著烤章魚燒香氣。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-utensils"></i> 美食名勝：元祖串炸、章魚燒、大阪燒，搭乘觀光船巡遊水運河。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-list" style="justify-content: center;">
+                        <div class="card-glass" style="border-color: rgba(16, 185, 129, 0.4);">
+                            <h4 class="card-title"><i class="fa-solid fa-tower-cell" style="color: var(--accent-matcha);"></i> 4. 新世界 & 通天閣 (Shinsekai)</h4>
+                            <p class="card-text">
+                                保留著濃郁昭和時代懷舊風情的老街！高聳的【通天閣】塔頂設有幸運神 Billiken 像，觸摸腳底據說能帶來好運。
+                            </p>
+                        </div>
+                        <div class="card-glass" style="margin-top: 14px; border-color: rgba(245, 158, 11, 0.4);">
+                            <h4 class="card-title"><i class="fa-solid fa-bag-shopping" style="color: var(--accent-gold);"></i> 5. 心齋橋筋商店街 (Shinsaibashi)</h4>
+                            <p class="card-text">
+                                長達 600 公尺的有遮棚拱廊購物街。聚集藥妝店、日系服飾精品與大丸百貨，是採購潮流手信的最佳去處。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 10: SCENERY SPOTLIGHT 3 -->
+            <section class="slide" id="slide-10">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-gold);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 3 · 奈良神域與古剎</div>
+                        <h2 class="slide-title">奈良公園神鹿、東大寺與春日大社</h2>
+                        <p class="slide-subtitle">萬木清幽的古都天然公園與世界級木造建築遺產</p>
+                    </div>
+                    <div class="day-badge">奈良特寫</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="scenery-card">
+                        <img src="images/nara_park_deer_1784472116614.jpg" alt="奈良公園可愛小鹿" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-paw" style="color: var(--accent-gold);"></i> 6. 奈良公園 (Nara Park)</h3>
+                                <p class="scenery-desc">
+                                    廣達 660 公頃的草木綠地中生活著 1,200 多頭野生梅花鹿。牠們被視為神的使者，聰慧討喜，甚至學會向遊客點頭求鹿仙貝。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-camera"></i> 最佳攝影：10:00 前晨光透射樹冠，逆光下的小鹿毛髮閃耀著柔美金邊。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-list" style="justify-content: center;">
+                        <div class="card-glass">
+                            <h4 class="card-title"><i class="fa-solid fa-gopuram" style="color: var(--accent-gold);"></i> 7. 東大寺 (Todai-ji Temple)</h4>
+                            <p class="card-text">
+                                世界最大木造建築！大佛殿內供奉 15 公尺高的盧舍那大佛，殿內圓洞大柱據說順利鑽過能祈求平安智慧。
+                            </p>
+                        </div>
+                        <div class="card-glass" style="margin-top: 14px;">
+                            <h4 class="card-title"><i class="fa-solid fa-torii-gate" style="color: var(--accent-vermilion);"></i> 8. 春日大社 (Kasuga Taisha)</h4>
+                            <p class="card-text">
+                                參道兩側排列著 3,000 座古樸石燈籠，朱紅建築被茂密古樹環抱，充盈著神秘肅穆的禪意氛圍。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 11: SCENERY SPOTLIGHT 4 -->
+            <section class="slide" id="slide-11">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-sakura);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 4 · 京都祇園與古道</div>
+                        <h2 class="slide-title">祇園花見小路、八坂神社與二年坂三年坂</h2>
+                        <p class="slide-subtitle">漫步於石板坡道與町家木造建築間，感受最純正的藝妓古韻</p>
+                    </div>
+                    <div class="day-badge">京都特寫</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="scenery-card">
+                        <img src="images/kyoto_gion_1784472896102.jpg" alt="祇園花見小路" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-fan" style="color: var(--accent-sakura);"></i> 9. 祇園 · 花見小路 (Gion)</h3>
+                                <p class="scenery-desc">
+                                    京都最具代表性的花街。兩側保存著古色古香的茶屋與木造格子窗町家，黃昏時分燈籠點亮，常能瞥見藝妓的優雅身影。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-moon"></i> 傍晚行程：黃昏漫步花見小路，隨後前往點亮百座提燈的八坂神社。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-list" style="justify-content: center;">
+                        <div class="card-glass" style="border-color: rgba(255, 77, 79, 0.4);">
+                            <h4 class="card-title"><i class="fa-solid fa-torii-gate" style="color: var(--accent-vermilion);"></i> 10. 八坂神社 (Yasaka Shrine)</h4>
+                            <p class="card-text">
+                                全日本八坂神社的總本社！舞殿上掛滿商家奉納的白色提燈，夜晚點亮時格外幽玄浪漫，是京都夜間參拜首選。
+                            </p>
+                        </div>
+                        <div class="card-glass" style="margin-top: 14px; border-color: rgba(244, 114, 182, 0.4);">
+                            <h4 class="card-title"><i class="fa-solid fa-shoe-prints" style="color: var(--accent-sakura);"></i> 11. 二年坂・三年坂 (Historic Slopes)</h4>
+                            <p class="card-text">
+                                通往清水寺的古老石板坡道。沿途開滿京都傳統手藝品店、抹茶小吃店與和服租賃店，穿和服拍照極具風情。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 12: SCENERY SPOTLIGHT 5 -->
+            <section class="slide" id="slide-12">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-vermilion);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 5 · 京都國寶大社與舞台</div>
+                        <h2 class="slide-title">伏見稻荷千本鳥居與清水寺清水舞台</h2>
+                        <p class="slide-subtitle">朱紅連綿的神域走廊與懸崖木造工藝的巔峰傑作</p>
+                    </div>
+                    <div class="day-badge">京都特寫</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="scenery-card">
+                        <img src="images/kyoto_fushimi_inari_1784472128480.jpg" alt="伏見稻荷千本鳥居" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-torii-gate" style="color: var(--accent-vermilion);"></i> 12. 伏見稻荷大社 · 千本鳥居</h3>
+                                <p class="scenery-desc">
+                                    上萬座信徒奉納的朱紅鳥居沿山勢延伸，晨光透射下形成令人屏息的視覺走廊，被譽為關西最震撼的人文景觀之一。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-clock"></i> 早起秘訣：週六 07:30 前抵達即可獨享靜謐空無一人的鳥居迴廊。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="scenery-card">
+                        <img src="images/kyoto_kiyomizu_1784472138149.jpg" alt="清水寺舞台" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-archway" style="color: var(--accent-sakura);"></i> 13. 清水寺 · 清水舞台</h3>
+                                <p class="scenery-desc">
+                                    懸空建造於崖壁上，依靠 139 根櫸木榫卯交錯支撐（不使用一枚釘子）。佇立舞台上可遠眺京都全景，四季景色皆美。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-camera"></i> 經典視角：從奧之院走廊遠眺拍攝清水舞台與山林絕景。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 13: SCENERY SPOTLIGHT 6 -->
+            <section class="slide" id="slide-13">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-matcha);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 6 · 京都自然與水岸風情</div>
+                        <h2 class="slide-title">嵐山竹林小徑、渡月橋與先斗町鴨川</h2>
+                        <p class="slide-subtitle">感受風吹竹葉沙沙聲與鴨川河畔居酒屋的微醺夜色</p>
+                    </div>
+                    <div class="day-badge">京都特寫</div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="scenery-card">
+                        <img src="images/kyoto_arashiyama_1784472886113.jpg" alt="嵐山竹林小徑" class="scenery-img">
+                        <div class="scenery-body">
+                            <div>
+                                <h3 class="scenery-title"><i class="fa-solid fa-tree" style="color: var(--accent-matcha);"></i> 14. 嵐山竹林小徑 & 渡月橋</h3>
+                                <p class="scenery-desc">
+                                    高聳入雲的綠竹密佈道旁，當微風吹過，竹葉撞擊出清脆清響。橫跨桂川的渡月橋背靠嵐山山巒，如同一幅清雅的山水畫。
+                                </p>
+                            </div>
+                            <div class="scenery-tip">
+                                <i class="fa-solid fa-leaf"></i> 詩意感受：入選日本「百大想保留的音景」，漫步其中無比心曠神怡。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-list" style="justify-content: center;">
+                        <div class="card-glass" style="border-color: rgba(245, 158, 11, 0.4);">
+                            <h4 class="card-title"><i class="fa-solid fa-utensils" style="color: var(--accent-gold);"></i> 15. 先斗町 & 鴨川 (Pontocho)</h4>
+                            <p class="card-text">
+                                緊鄰鴨川的狹窄古老巷弄。聚集著各種古樸居酒屋、湯豆腐店與京料理。坐在川床或窗前邊賞鴨川水色邊品嚐特色美食。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 14: SCENERY SPOTLIGHT 7 (Nishiki & Outlets) -->
+            <section class="slide" id="slide-14">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-blue);"><i class="fa-solid fa-camera-retro"></i> 名勝特寫 7 · 市集美食與購物名勝</div>
+                        <h2 class="slide-title">京都廚房錦市場、四條河原町與臨空城</h2>
+                        <p class="slide-subtitle">嘗遍上百家老字號道地小吃，滿載而歸採購特產伴手禮</p>
+                    </div>
+                    <div class="day-badge">購物特寫</div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card-glass">
+                        <div class="card-title"><i class="fa-solid fa-utensils" style="color: var(--accent-gold);"></i> 16. 錦市場 (Nishiki Market)</div>
+                        <p class="card-text">
+                            享有“京都廚房”美譽！400年歷史老街，必吃章魚鵪鶉蛋串、現烤海鮮刺身、抹茶玉子燒與豆乳甜甜圈。
+                        </p>
+                    </div>
+
+                    <div class="card-glass">
+                        <div class="card-title"><i class="fa-solid fa-store" style="color: var(--accent-sakura);"></i> 四條河原町 (Shijo Kawaramachi)</div>
+                        <p class="card-text">
+                            京都最繁華的購物中心！高島屋、大丸百貨與各大品牌 flag ship store 集中於此，選購高檔彩妝與工藝品。
+                        </p>
+                    </div>
+
+                    <div class="card-glass">
+                        <div class="card-title"><i class="fa-solid fa-tags" style="color: var(--accent-blue);"></i> 臨空城 (Rinku Premium Outlets)</div>
+                        <p class="card-text">
+                            關西機場前一站的超大型 Outlets！擁有多家國際大牌折扣店，是登機前的最後採購天堂。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 15: SHOPPING ALTERNATIVES (NEW SLIDE) -->
+            <section class="slide" id="slide-15">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag" style="color: var(--accent-gold);"><i class="fa-solid fa-bag-shopping"></i> 購物備選指南</div>
+                        <h2 class="slide-title">關西三大主題購物商圈（替代方案）</h2>
+                        <p class="slide-subtitle">随时替換觀光景點，滿足血拼、藥妝、動漫與大牌採購需求</p>
+                    </div>
+                    <div class="day-badge" style="background: linear-gradient(135deg, rgba(245,158,11,0.3), rgba(236,72,153,0.3));">購物備選</div>
+                </div>
+
+                <div class="grid-3">
+                    <div class="card-glass" style="border-color: rgba(255, 77, 79, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-gem" style="color: var(--accent-vermilion);"></i> 1. 大阪梅田 / 難波商圈</div>
+                        <p class="card-text" style="font-size: 0.85rem;">
+                            <strong>【梅田阪急百貨】</strong>全日本彩妝品牌最齊全！<br>
+                            <strong>【LUCUA & Yodobashi】</strong>潮流服飾與 3C 家電。<br>
+                            <strong>【心齋橋 PARCO】</strong>Nintendo Osaka & 寶可夢中心！<br>
+                            <strong>【日本橋電器街】</strong>關西動漫二次元聖地。
+                        </p>
+                        <div class="transit-badge" style="margin-top: 10px;"><i class="fa-solid fa-arrows-rotate"></i> 可替換：D1 觀光行程</div>
+                    </div>
+
+                    <div class="card-glass" style="border-color: rgba(244, 114, 182, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-gift" style="color: var(--accent-sakura);"></i> 2. 京都四條 / 河原町商圈</div>
+                        <p class="card-text" style="font-size: 0.85rem;">
+                            <strong>【Nintendo Kyoto】</strong>高島屋 7 樓旗艦店！<br>
+                            <strong>【Kyoto BAL】</strong>文青生活選品店與蔦屋書店。<br>
+                            <strong>【新京極 / 寺町通】</strong>遮棚商店街，採購和風工藝品、古著與日本文具。<br>
+                            <strong>【Porta 地下街】</strong>京都站內精致甜點伴手禮。
+                        </p>
+                        <div class="transit-badge" style="color: var(--accent-sakura); border-color: rgba(244,114,182,0.3); background: rgba(244,114,182,0.1); margin-top: 10px;"><i class="fa-solid fa-arrows-rotate"></i> 可替換：D3/D4 京都行程</div>
+                    </div>
+
+                    <div class="card-glass" style="border-color: rgba(56, 189, 248, 0.4);">
+                        <div class="card-title"><i class="fa-solid fa-tags" style="color: var(--accent-blue);"></i> 3. 關西 Outlet 狂歡</div>
+                        <p class="card-text" style="font-size: 0.85rem;">
+                            <strong>【臨空城 Outlets】</strong>關西機場前一站，匯聚 250+ 國際奢品與運動品牌，登機前掃貨。<br>
+                            <strong>【三井 Outlet 門真】</strong>大阪近郊最新 LaLaport 複合式購物中心！
+                        </p>
+                        <div class="transit-badge" style="color: var(--accent-blue); border-color: rgba(56, 189, 248, 0.3); background: rgba(56, 189, 248, 0.1); margin-top: 10px;"><i class="fa-solid fa-arrows-rotate"></i> 可替換：D4 返程前時間</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 16: Essential Transport & Tips -->
+            <section class="slide" id="slide-16">
+                <div class="slide-header">
+                    <div>
+                        <div class="slide-tag"><i class="fa-solid fa-map-location-dot"></i> 實用指南</div>
+                        <h2 class="slide-title">關西交通票券與地圖避坑貼士</h2>
+                        <p class="slide-subtitle">精明省時省力的自由行秘訣</p>
+                    </div>
+                </div>
+
+                <div class="grid-split">
+                    <div class="card-glass">
+                        <div class="card-title"><i class="fa-solid fa-ticket"></i> 推薦交通卡/票券</div>
+                        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 12px;">
+                            <div style="background: rgba(255,255,255,0.04); padding: 10px 14px; border-radius: 10px;">
+                                <strong style="color: var(--accent-gold);">1. ICOCA 交通卡 (神卡必備)</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">直接綁定 iPhone Apple Wallet 儲值，支持地鐵、私鐵、公車及全日本便利店。</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.04); padding: 10px 14px; border-radius: 10px;">
+                                <strong style="color: var(--accent-gold);">2. JR 關西地區鐵路周遊券 / Haruka 折扣票</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">適合乘坐 Haruka 特急往返京都與關西機場。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-glass">
+                        <div class="card-title"><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-vermilion);"></i> 地圖導覽與交通貼士</div>
+                        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 12px;">
+                            <div style="background: rgba(168,85,247,0.08); border-left: 3px solid var(--accent-purple); padding: 10px 14px; border-radius: 0 10px 10px 0;">
+                                <strong style="color: #fff;">地鐵 vs 私鐵路線分清</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">大阪往返奈良首選【近鐵】，大阪前往京都河原町首選【阪急電車】。</p>
+                            </div>
+                            <div style="background: rgba(255,77,79,0.08); border-left: 3px solid var(--accent-vermilion); padding: 10px 14px; border-radius: 0 10px 10px 0;">
+                                <strong style="color: #fff;">Google Maps 全程導航</strong>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 2px;">在日本搭乘電車請對照月台看板上的「月台編號 (Track Number)」，切勿搭錯方向。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SLIDE 17: Conclusion & Q&A -->
+            <section class="slide" id="slide-17">
+                <div class="cover-content">
+                    <div style="background: rgba(255, 77, 79, 0.15); border: 1px solid rgba(255,77,79,0.3); border-radius: 50%; width: 80px; height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                        <i class="fa-solid fa-plane" style="font-size: 2.2rem; color: var(--accent-vermilion);"></i>
+                    </div>
+
+                    <h1 class="cover-title" style="font-size: 3rem;">預祝您關西旅程圓滿順遂！</h1>
+                    <p class="cover-desc" style="font-size: 1.15rem; max-width: 650px;">
+                        大阪的繁華不夜城、奈良的靈動小鹿、京都的千本鳥居與竹林古韻，都將為您帶來難忘的假期！
+                    </p>
+
+                    <div style="display: flex; gap: 16px; margin-top: 10px;">
+                        <div class="card-glass" style="padding: 16px 28px; text-align: center;">
+                            <div style="color: var(--accent-gold); font-size: 1.1rem; font-weight: 700;">出遊時間表</div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">週三深夜 23:00 入境 ➔ 週日晚返程</div>
+                        </div>
+                        <div class="card-glass" style="padding: 16px 28px; text-align: center;">
+                            <div style="color: var(--accent-matcha); font-size: 1.1rem; font-weight: 700;">預估花費 (人均)</div>
+                            <div style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px;">約 HKD/TWD 等值 ¥3,500 - ¥6,000 RMB (不含大交通)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer Controls Bar -->
+    <footer class="footer-bar">
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <div class="slide-counter">
+            <span class="current" id="current-slide-num">1</span> / <span id="total-slide-num">17</span>
+        </div>
+
+        <div class="nav-controls">
+            <button class="btn-nav" id="btn-prev" disabled><i class="fa-solid fa-chevron-left"></i> 上一張</button>
+            <button class="btn-nav" id="btn-next">下一張 <i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </footer>
+
+    <!-- Overview Grid Modal -->
+    <div class="overview-modal" id="overview-modal">
+        <div class="overview-header">
+            <h2 style="color: #fff; font-size: 1.5rem;"><i class="fa-solid fa-border-all" style="color: var(--accent-vermilion);"></i> 簡報全景概覽</h2>
+            <button class="btn-icon" id="btn-close-overview"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="overview-grid" id="overview-grid">
+            <!-- Dynamic Thumbs Injected via JS -->
+        </div>
+    </div>
+
+    <!-- Presentation Engine JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const totalSlides = slides.length;
+            let currentSlideIndex = 0;
+
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+            const currentSlideNum = document.getElementById('current-slide-num');
+            const totalSlideNum = document.getElementById('total-slide-num');
+            const progressBar = document.getElementById('progress-bar');
+
+            const btnOverview = document.getElementById('btn-overview');
+            const btnCloseOverview = document.getElementById('btn-close-overview');
+            const overviewModal = document.getElementById('overview-modal');
+            const overviewGrid = document.getElementById('overview-grid');
+            const btnFullscreen = document.getElementById('btn-fullscreen');
+
+            totalSlideNum.textContent = totalSlides;
+
+            // Initialize Grid Thumbs
+            slides.forEach((slide, idx) => {
+                const titleEl = slide.querySelector('.slide-title') || slide.querySelector('.cover-title');
+                const titleText = titleEl ? titleEl.textContent : `Slide ${idx + 1}`;
+                
+                const thumb = document.createElement('div');
+                thumb.className = 'overview-thumb';
+                thumb.innerHTML = `
+                    <span class="overview-thumb-num">0${idx + 1}</span>
+                    <div class="overview-thumb-title">${titleText}</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-circle" style="font-size: 6px; color: var(--accent-vermilion); margin-right: 4px;"></i> 點擊切換</div>
+                `;
+                thumb.addEventListener('click', () => {
+                    goToSlide(idx);
+                    closeOverviewModal();
+                });
+                overviewGrid.appendChild(thumb);
+            });
+
+            function updateSlideState() {
+                slides.forEach((slide, idx) => {
+                    if (idx === currentSlideIndex) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+
+                currentSlideNum.textContent = currentSlideIndex + 1;
+                progressBar.style.width = `${((currentSlideIndex + 1) / totalSlides) * 100}%`;
+
+                btnPrev.disabled = currentSlideIndex === 0;
+                btnNext.disabled = currentSlideIndex === totalSlides - 1;
+
+                if (currentSlideIndex === totalSlides - 1) {
+                    btnNext.innerHTML = '完成 <i class="fa-solid fa-check"></i>';
+                } else {
+                    btnNext.innerHTML = '下一張 <i class="fa-solid fa-chevron-right"></i>';
+                }
+            }
+
+            function goToSlide(index) {
+                if (index >= 0 && index < totalSlides) {
+                    currentSlideIndex = index;
+                    updateSlideState();
+                }
+            }
+
+            function nextSlide() {
+                if (currentSlideIndex < totalSlides - 1) {
+                    goToSlide(currentSlideIndex + 1);
+                }
+            }
+
+            function prevSlide() {
+                if (currentSlideIndex > 0) {
+                    goToSlide(currentSlideIndex - 1);
+                }
+            }
+
+            btnNext.addEventListener('click', nextSlide);
+            btnPrev.addEventListener('click', prevSlide);
+
+            // Keyboard Navigation
+            document.addEventListener('keydown', (e) => {
+                if (overviewModal.classList.contains('active')) {
+                    if (e.key === 'Escape') closeOverviewModal();
+                    return;
+                }
+
+                if (e.key === 'ArrowRight' || e.key === 'Space' || e.key === 'PageDown') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                    prevSlide();
+                } else if (e.key === 'Home') {
+                    goToSlide(0);
+                } else if (e.key === 'End') {
+                    goToSlide(totalSlides - 1);
+                } else if (e.key === 'g' || e.key === 'G') {
+                    openOverviewModal();
+                } else if (e.key === 'f' || e.key === 'F') {
+                    toggleFullscreen();
+                }
+            });
+
+            // Overview Modal Controls
+            function openOverviewModal() { overviewModal.classList.add('active'); }
+            function closeOverviewModal() { overviewModal.classList.remove('active'); }
+
+            btnOverview.addEventListener('click', openOverviewModal);
+            btnCloseOverview.addEventListener('click', closeOverviewModal);
+
+            // Fullscreen Toggle
+            function toggleFullscreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(err => {
+                        console.error(`Error attempting to enable fullscreen: ${err.message}`);
+                    });
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    }
+                }
+            }
+
+            btnFullscreen.addEventListener('click', toggleFullscreen);
+
+            // Initial Setup
+            updateSlideState();
+        });
+    </script>
+</body>
+</html>
